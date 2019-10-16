@@ -15,6 +15,11 @@ module.exports = {
             return res.status(400).json({error: 'Dev not exist'}); 
         }
 
+        if(targetDev.likes.includes(loggedDev._id)){
+            console.log("DEU MATCH");
+
+        }
+
         loggedDev.likes.push(targetDev._id);
 
         await loggedDev.save();
